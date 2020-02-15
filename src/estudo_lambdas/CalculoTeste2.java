@@ -1,5 +1,7 @@
 package estudo_lambdas;
 
+import estudo_lambdas.classes.Calculo;
+
 /**
  * Realizando os calculos utilizando implementacoes lambda.
  * 

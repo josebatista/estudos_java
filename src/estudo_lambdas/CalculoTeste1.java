@@ -1,5 +1,9 @@
 package estudo_lambdas;
 
+import estudo_lambdas.classes.Calculo;
+import estudo_lambdas.classes.Multiplicar;
+import estudo_lambdas.classes.Somar;
+
 /**
  * Realizando os calculos utilizando implementacoes da interface.
  * 

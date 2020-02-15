@@ -1,4 +1,4 @@
-package estudo_lambdas;
+package estudo_lambdas.classes;
 
 public class Multiplicar implements Calculo {
 
