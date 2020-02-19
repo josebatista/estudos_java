@@ -18,4 +18,9 @@ public class Aluno {
 		return nota;
 	}
 
+	@Override
+	public String toString() {
+		return nome + " tem a nota " + nota;
+	}
+
 }
