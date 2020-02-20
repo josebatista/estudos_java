@@ -21,6 +21,14 @@ public class Campo {
 		this.coluna = coluna;
 	}
 
+	public boolean isAberto() {
+		return this.aberto;
+	}
+
+	public boolean isMarcado() {
+		return this.marcado;
+	}
+
 	boolean adicionarVizinho(Campo vizinho) {
 		boolean linhaDiferente = this.linha != vizinho.linha;
 		boolean colunaDiferente = this.coluna != vizinho.coluna;
@@ -47,8 +55,15 @@ public class Campo {
 		}
 	}
 
+	void minar() {
+		this.minado = true;
+	}
+
 	boolean abrir() {
 		if (!this.aberto && !this.marcado) {
+
+			this.aberto = true;
+
 			if (this.minado) {
 				throw new ExplosaoException();
 			}
