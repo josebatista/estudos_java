@@ -37,6 +37,10 @@ public class Campo {
 		return this.marcado;
 	}
 
+	public boolean isMinado() {
+		return this.minado;
+	}
+
 	boolean adicionarVizinho(Campo vizinho) {
 		boolean linhaDiferente = this.linha != vizinho.linha;
 		boolean colunaDiferente = this.coluna != vizinho.coluna;
