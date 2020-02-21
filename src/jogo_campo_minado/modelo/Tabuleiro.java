@@ -22,6 +22,16 @@ public class Tabuleiro {
 		this.sortearMinas();
 	}
 
+	public void abrir(int linha, int coluna) {
+		this.campos.parallelStream().filter(c -> c.getLinha() == linha && c.getColuna() == coluna).findFirst()
+				.ifPresent(c -> c.abrir());
+	}
+
+	public void alternarMarcacao(int linha, int coluna) {
+		this.campos.parallelStream().filter(c -> c.getLinha() == linha && c.getColuna() == coluna).findFirst()
+				.ifPresent(c -> c.alternarMarcacao());
+	}
+
 	private void gerarCampos() {
 		for (int linha = 0; linha < this.linhas; linha++) {
 			for (int coluna = 0; coluna < this.colunas; coluna++) {
@@ -56,6 +66,24 @@ public class Tabuleiro {
 	public void reiniciar() {
 		this.campos.stream().forEach(c -> c.reiniciar());
 		this.sortearMinas();
+	}
+
+	@Override
+	public String toString() {
+		StringBuilder sb = new StringBuilder();
+
+		int i = 0;
+		for (int l = 0; l < this.linhas; l++) {
+			for (int c = 0; c < this.colunas; c++) {
+				sb.append(" ");
+				sb.append(this.campos.get(i));
+				sb.append(" ");
+				i++;
+			}
+			sb.append("\n");
+		}
+
+		return sb.toString();
 	}
 
 }
