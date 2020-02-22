@@ -79,8 +79,19 @@ public class Tabuleiro {
 	public String toString() {
 		StringBuilder sb = new StringBuilder();
 
+		sb.append("  ");
+		for (int c = 0; c < this.colunas; c++) {
+			sb.append(" ");
+			sb.append(c);
+			sb.append(" ");
+		}
+
+		sb.append("\n");
+
 		int i = 0;
 		for (int l = 0; l < this.linhas; l++) {
+			sb.append(l);
+			sb.append(" ");
 			for (int c = 0; c < this.colunas; c++) {
 				sb.append(" ");
 				sb.append(this.campos.get(i));
