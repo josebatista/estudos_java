@@ -41,6 +41,10 @@ public class Campo {
 		return this.minado;
 	}
 
+	public void setAberto(boolean aberto) {
+		this.aberto = aberto;
+	}
+
 	boolean adicionarVizinho(Campo vizinho) {
 		boolean linhaDiferente = this.linha != vizinho.linha;
 		boolean colunaDiferente = this.coluna != vizinho.coluna;
