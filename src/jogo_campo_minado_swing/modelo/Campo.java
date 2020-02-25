@@ -130,6 +130,8 @@ public class Campo {
 		this.aberto = false;
 		this.minado = false;
 		this.marcado = false;
+
+		this.notificarObservadores(CampoEvento.REINICIAR);
 	}
 
 }
