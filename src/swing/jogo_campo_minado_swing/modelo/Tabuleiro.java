@@ -1,4 +1,4 @@
-package jogo_campo_minado_swing.modelo;
+package swing.jogo_campo_minado_swing.modelo;
 
 import java.util.ArrayList;
 import java.util.List;

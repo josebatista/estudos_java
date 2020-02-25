@@ -1,4 +1,4 @@
-package jogo_campo_minado_swing.visao;
+package swing.jogo_campo_minado_swing.visao;
 
 import java.awt.GridLayout;
 
@@ -6,7 +6,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
-import jogo_campo_minado_swing.modelo.Tabuleiro;
+import swing.jogo_campo_minado_swing.modelo.Tabuleiro;
 
 @SuppressWarnings("serial")
 public class PainelTabuleiro extends JPanel {

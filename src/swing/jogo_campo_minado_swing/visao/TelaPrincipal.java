@@ -1,8 +1,8 @@
-package jogo_campo_minado_swing.visao;
+package swing.jogo_campo_minado_swing.visao;
 
 import javax.swing.JFrame;
 
-import jogo_campo_minado_swing.modelo.Tabuleiro;
+import swing.jogo_campo_minado_swing.modelo.Tabuleiro;
 
 @SuppressWarnings("serial")
 public class TelaPrincipal extends JFrame {

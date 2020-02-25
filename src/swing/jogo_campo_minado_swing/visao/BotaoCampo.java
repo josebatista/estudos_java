@@ -1,4 +1,4 @@
-package jogo_campo_minado_swing.visao;
+package swing.jogo_campo_minado_swing.visao;
 
 import java.awt.Color;
 import java.awt.event.MouseEvent;
@@ -8,9 +8,9 @@ import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.SwingUtilities;
 
-import jogo_campo_minado_swing.modelo.Campo;
-import jogo_campo_minado_swing.modelo.CampoEvento;
-import jogo_campo_minado_swing.modelo.CampoObservador;
+import swing.jogo_campo_minado_swing.modelo.Campo;
+import swing.jogo_campo_minado_swing.modelo.CampoEvento;
+import swing.jogo_campo_minado_swing.modelo.CampoObservador;
 
 @SuppressWarnings("serial")
 public class BotaoCampo extends JButton implements CampoObservador, MouseListener {
