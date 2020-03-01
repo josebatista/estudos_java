@@ -47,9 +47,39 @@ public class Memoria {
 		} else if (tipoComando == TipoComando.NUMERO || tipoComando == TipoComando.VIRGULA) {
 			this.textoAtual = this.substituir ? texto : this.textoAtual + texto;
 			this.substituir = false;
+		} else {
+			this.substituir = true;
+			this.textoAtual = obterResultadoOperacao();
+			this.textoBuffer = this.textoAtual;
+			this.ultimaOperacao = tipoComando;
 		}
 
 		this.observadores.forEach(o -> o.valorAlterado(this.getTextoAtual()));
+	}
+
+	private String obterResultadoOperacao() {
+		if (this.ultimaOperacao == null) {
+			return this.textoAtual;
+		}
+
+		double numeroBuffer = Double.parseDouble(this.textoBuffer.replace(",", "."));
+		double numeroAtual = Double.parseDouble(this.textoAtual.replace(",", "."));
+
+		double resultado = 0;
+
+		if (this.ultimaOperacao == TipoComando.SOMA) {
+			resultado = numeroBuffer + numeroAtual;
+		} else if (this.ultimaOperacao == TipoComando.SUB) {
+			resultado = numeroBuffer - numeroAtual;
+		} else if (this.ultimaOperacao == TipoComando.MULT) {
+			resultado = numeroBuffer * numeroAtual;
+		} else if (this.ultimaOperacao == TipoComando.DIV) {
+			resultado = numeroBuffer / numeroAtual;
+		}
+
+		String resultadoString = Double.toString(resultado).replace(".", ",");
+		boolean inteiro = resultadoString.endsWith(",0");
+		return inteiro ? resultadoString.replace(",0", "") : resultadoString;
 	}
 
 	private TipoComando detectarTipoComando(String texto) {
