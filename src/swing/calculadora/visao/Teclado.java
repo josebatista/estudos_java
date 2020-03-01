@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
+import swing.calculadora.modelo.Memoria;
+
 @SuppressWarnings("serial")
 public class Teclado extends JPanel implements ActionListener {
 
@@ -76,7 +78,7 @@ public class Teclado extends JPanel implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		if (e.getSource() instanceof JButton) {
 			JButton botao = (JButton) e.getSource();
-			System.out.println(botao.getText());
+			Memoria.getInstancia().processarValor(botao.getText());
 		}
 
 	}
