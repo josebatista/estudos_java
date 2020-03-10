@@ -19,9 +19,15 @@ public class ExcluirPessoa {
 
 		PreparedStatement stmt = conexao.prepareStatement(sql);
 		stmt.setInt(1, codigo);
-		stmt.execute();
+		int contador = stmt.executeUpdate();
 
-		System.out.println("Pessoa removida com sucesso!!!");
+		if (contador > 0) {
+			System.out.println("Pessoa removida com sucesso!!!");
+		} else {
+			System.out.println("Nada feito");
+		}
+
+		System.out.println(contador + " linhas modificadas");
 
 		stmt.close();
 		conexao.close();
